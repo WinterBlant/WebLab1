@@ -2,11 +2,13 @@ HTML({ lang: "en" },
     HEAD({},
         TITLE("Weather"),
         STYLE({ type: "text/css" }),
+        LINK({rel: "stylesheet", type: "text/css", href: "http://allfont.ru/allfont.css?fonts=comic-sans-ms"}),
+        LINK({rel: "stylesheet", href: "style.css"}),
         SCRIPT({src: "https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"})
     ),
 
     BODY(
-        FORM (
+        FORM ( {id:"coolForm"},
             INPUT ({id: "findCity", type: "text"}, "Write your city"),
             BUTTON ({id: "submit"}, "Find"),
             ),

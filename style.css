@@ -1,0 +1,46 @@
+body {
+  background-image: url("https://wi-images.condecdn.net/image/doEYpG6Xd87/crop/2040/f/weather.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #49b7e8;
+}
+
+#findCity {
+  width: 600px;
+  margin-top: 15px;
+  height: 40px;
+  font-size: 20px;
+  font-family: "Comic Sans MS";
+}
+
+#submit {
+  margin-top: 15px;
+  width: 115px;
+  height: 46px;
+}
+
+#coolForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#coolPic {
+  width: 100%;
+}
+
+#divWeather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  color: #6f00cc;
+  flex-direction: column;
+}
+
+#place {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */
