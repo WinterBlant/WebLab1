@@ -7,13 +7,12 @@ HTML({ lang: "en" },
         SCRIPT({src: "https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"})
     ),
 
-    BODY(
+    BODY( {id: "body"},
         FORM ( {id:"coolForm"},
             INPUT ({id: "findCity", type: "text"}, "Write your city"),
             BUTTON ({id: "submit"}, "Find"),
             ),
         DIV ({id: "divWeather"},
-            DIV ({id: "err"}),
             DIV ({id: "place"}),
             DIV ({id: "curWeather"}),
             DIV ({id: "temp"}),
@@ -26,19 +25,19 @@ HTML({ lang: "en" },
 
 let APIkey = '28b4ff63e143043a4cf62a826e7449ea';
 let weather;
+let block = document.createElement('div');
+let body = document.getElementById('body');
+block.id = "block";
+body.appendChild(block);
+var withDomo = A({href: "http://domo-js.com"}, "Learn about dōmo");
+domo.global(true);
 
-document.getElementById('submit').addEventListener("click", function(event){
+document.getElementById('coolForm').addEventListener("submit", function(event){
     event.preventDefault();
-    lookForCity()
+    getWeather(event.target.findCity.value);
 });
 
-function lookForCity() {
-    let nameCity = document.getElementById('findCity').value;
-    getWeather(nameCity);
-}
-
-function fillElements(err, place, curWeather, temp, wind, humid, press) {
-    document.getElementById('err').innerText = err;
+function fillElements(place, curWeather, temp, wind, humid, press) {
     document.getElementById('place').innerText = place;
     document.getElementById('curWeather').innerText = curWeather;
     document.getElementById('temp').innerText = temp;
@@ -48,8 +47,7 @@ function fillElements(err, place, curWeather, temp, wind, humid, press) {
 }
 
 function fillWeather(weather) {
-    fillElements('',
-        weather.name + ', ' + weather.sys.country,
+    fillElements(weather.name + ', ' + weather.sys.country,
         'Current weather: ' + weather.weather[0].main,
         'Temperature: ' + (weather.main.temp - 273.15).toFixed(0) + '°C',
         'Wind: ' + weather.wind.speed + 'm/s',
@@ -75,14 +73,8 @@ function getWeather(cityName) {
         )
         .fail(
             function (err) {
-                fillElements(err.status + ' ' + err.statusText + '\r\n' + 'Details: ' + err.responseJSON.message,
-                    '',
-                    '',
-                    '',
-                    '',
-                    '',
-                    ''
-                );
+                let text = err.status + ' ' + err.statusText + '\r\n' + 'Details: ' + err.responseJSON.message;
+                block.innerText = text;
             }
         )
 }

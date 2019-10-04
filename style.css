@@ -43,4 +43,10 @@ body {
   font-weight: bold;
 }
 
+#block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
 /*# sourceMappingURL=style.css.map */
