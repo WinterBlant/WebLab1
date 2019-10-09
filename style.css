@@ -43,10 +43,16 @@ body {
   font-weight: bold;
 }
 
-#block {
+#error {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  flex-direction: column;
 }
+
+p {
+  margin: auto;
+}
+
 /*# sourceMappingURL=style.css.map */

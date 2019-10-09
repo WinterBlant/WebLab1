@@ -1,4 +1,35 @@
 <!DOCTYPE html>
-<script src="lib/domo.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="index.js" charset="utf-8"></script>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather</title>
+    <link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=comic-sans-ms">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="body">
+    <form id="coolForm">
+        <input id="findCity" type="text" placeholder="Write your city">
+        <button id="submit"> Find </button>
+    </form>
+    <script id="hdlbrs_tmplt" type="text/x-handlebars-template">
+        <div id="place">{{ place }}</div>
+        <div id="curWeather">{{ curWeather }}</div>
+        <div id="temp">{{ temp }}</div>
+        <div id="wind">{{ wind }}</div>
+        <div id="humid">{{ humid }}</div>
+        <div id="press">{{ press }}</div>
+    </script>
+    <script id="error_tmplt" type="text/x-handlebars-template">
+        <p>{{ error1 }}</p>
+        <p>{{ error2 }}</p>
+    </script>
+    <script src="lib/handlebars-v4.4.3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>
