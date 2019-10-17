@@ -2,7 +2,7 @@
 A small web app for checking up the weather in your city.
 
 ## Used:
-[dōmo](https://jed.github.io/domo/) - template engine
+[handlebars.js](https://handlebars-draft.knappi.org/) - template engine
 
 [SASS](https://sass-lang.com/) - CSS preprocessor
 
@@ -12,4 +12,6 @@ A small web app for checking up the weather in your city.
 * Done!
 
 ## Editing
-**index.js** is the main file, where all the html and js code is located. **style.sass** is the css preprocessor's file, which was compiled into simple css, so you may edit either of them.
+**style.sass** is the css preprocessor's file, which was compiled into simple css, so you may edit either of them. If you want to edit the *.sass* file, simply unzip the **dart-sass.7z** into the project, then open the terminal in project folder and type:
+
+`sass preprocessfilename cssfilename`
