@@ -10,7 +10,7 @@ A small web app for checking up the weather in your city.
 * Clone the repo
 * Unzip dart-sass.7z in the cloned folder
 * Open terminal in this folder
-* Type sass style.sass style.css
+* Type `sass style.sass style.css`
 * Open index.html
 * Done!
 
