@@ -1,2 +1,4 @@
 *.css.map
 *.css
+node_modules
+bundle.js
