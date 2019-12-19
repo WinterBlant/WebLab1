@@ -12,19 +12,20 @@ submit = async event => {
         fillError(error.response);
     }
 };
-
-function resetprev(){
-    let prevwth = document.getElementById('divWeather');
-    let preverr = document.getElementById('error');
-    if (prevwth) {
-        prevwth.remove();
-    } else if (preverr) {
-        preverr.remove();
+const res = {
+    resetprev() {
+        let prevwth = document.getElementById('divWeather');
+        let preverr = document.getElementById('error');
+        if (prevwth) {
+            prevwth.remove();
+        } else if (preverr) {
+            preverr.remove();
+        }
     }
 }
 
 function fillWeather(weather) {
-    resetprev();
+    res.resetprev();
     let data = {
         place: weather.name + ', ' + weather.sys.country,
         curWeather: 'Current weather: ' + weather.weather[0].main,
@@ -43,7 +44,7 @@ function fillWeather(weather) {
 }
 
 function fillError(err) {
-    resetprev();
+    res.resetprev();
     let data = {
         error1: err.status + ' ' + err.statusText,
         error2: 'Details: ' + err.data.message
@@ -62,4 +63,4 @@ document.getElementById('coolForm').addEventListener("submit", submit);
 exports.submit = submit;
 exports.fillWeather = fillWeather;
 exports.fillError = fillError;
-exports.getWeather = getWeather;
+exports.res = res;
